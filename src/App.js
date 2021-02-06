@@ -34,7 +34,7 @@ export default function App() {
   }
   return (
     <div className="App">
-      <h1>To-Do List</h1>
+      <h1>Bucket List</h1>
 
       {/* <h2>Start editing to see some magic happen!</h2> */}
 
