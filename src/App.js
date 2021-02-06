@@ -5,22 +5,30 @@ export default function App() {
   const [list, setList] = useState([]);
 
   function inputHandler(event) {
-    var setTask = event.target.value;
-    setTask(setTask);
+    setTask(event.target.value);
   }
-  function addTask() {}
+  function addTask() {
+    setList((oldValue) => [...oldValue, task]);
+    setTask(" ");
+    console.log(task, list);
+  }
   return (
     <div className="App">
-      <h1>To-Do </h1>
+      <h1>To-Do List</h1>
 
       {/* <h2>Start editing to see some magic happen!</h2> */}
 
       <input
         type="text"
-        placeHolder="Enter your task"
+        placeholder="Enter your task"
+        value={task}
         onChange={inputHandler}
       />
       <button onClick={addTask}> + </button>
+
+      {list.map((item) => {
+        return <li key={item}> {item} </li>;
+      })}
     </div>
   );
 }
