@@ -5,20 +5,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faCheckCircle, faTrash);
+
 export default function App() {
   const [task, setTask] = useState("");
   const [list, setList] = useState([]);
   const [done, setDone] = useState([]);
 
+  //taking task input
   function inputHandler(event) {
     setTask(event.target.value);
   }
 
+  //task adding to list
   function addTask() {
-    setList((oldValue) => [...oldValue, task]);
-    setTask(" ");
+    if (task !== "") {
+      setList((oldValue) => [...oldValue, task]);
+      setTask("");
+    } else alert("Please enter any task");
     console.log(task, list, done);
   }
+
+  //deleting task from the list
   function delTask(item) {
     setList((oldValue) => {
       return oldValue.filter((element, index) => {
@@ -27,6 +34,7 @@ export default function App() {
     });
   }
 
+  //checking the task which are done
   function checkDone(itemVal, item) {
     setDone((oldValue) => [...oldValue, itemVal]);
     delTask(item);
@@ -36,8 +44,6 @@ export default function App() {
     <div className="App">
       <h1>Bucket List</h1>
 
-      {/* <h2>Start editing to see some magic happen!</h2> */}
-
       <input
         type="text"
         placeholder="Enter your task"
@@ -46,9 +52,10 @@ export default function App() {
       />
       <button onClick={addTask}> + </button>
 
+      {/* displaying the tasks */}
       {list.map((itemVal, item) => {
         return (
-          <div className="taskName">
+          <div className="allTask">
             <li key={item}>
               <FontAwesomeIcon icon="trash" onClick={() => delTask(item)} />
               {itemVal}
@@ -60,6 +67,8 @@ export default function App() {
           </div>
         );
       })}
+
+      {/* displaying completed tasks */}
       {done.map((items) => {
         return (
           <div className="taskDone">
