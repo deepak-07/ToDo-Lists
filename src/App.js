@@ -7,12 +7,19 @@ import { faCheckCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
 library.add(faCheckCircle, faTrash);
 
 export default function App() {
+  const [category, setCategory] = useState({ tname: "", ttask: [] });
+  const [taskHead, setTaskHead] = useState("");
   const [task, setTask] = useState("");
   const [list, setList] = useState([]);
   const [done, setDone] = useState([]);
 
+  //taking heading of task
+  function inputHandlerTaskHead(event) {
+    setTaskHead(event.target.value);
+  }
+
   //taking task input
-  function inputHandler(event) {
+  function inputHandlerTask(event) {
     setTask(event.target.value);
   }
 
@@ -40,20 +47,45 @@ export default function App() {
     delTask(item);
     console.log("Deleted");
   }
+
+  //saving category
+  function addGroupTask() {
+    setCategory((oldValue) => ({
+      ...oldValue,
+      newValue: {
+        tname: taskHead,
+        ttask: list
+      }
+    }));
+    setCategory((oldValue) => ({
+      ...oldValue,
+      // tname: taskHead
+      ttask: list
+    }));
+    setTaskHead("");
+    console.log(category);
+  }
+
   return (
     <div className="App">
       <h1>Bucket List</h1>
 
       <input
+        className="taskHeading"
+        type="text"
+        placeholder="Enter heading"
+        value={taskHead}
+        onChange={inputHandlerTaskHead}
+      />
+      <input
         className="taskName"
         type="text"
         placeholder="Enter your task"
         value={task}
-        onChange={inputHandler}
+        onChange={inputHandlerTask}
       />
       <button className="addTaskbtn" onClick={addTask}>
-        {" "}
-        +{" "}
+        +
       </button>
 
       {/* displaying the tasks */}
@@ -87,6 +119,14 @@ export default function App() {
           </div>
         );
       })}
+      <button className="groupTaskbtn" onClick={addGroupTask}>
+        Done
+      </button>
+      <div className="All">
+        {Object.keys(category).map((indexVal, index) => {
+          return <div key={index}>{index.tname}</div>;
+        })}
+      </div>
     </div>
   );
 }
