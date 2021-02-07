@@ -45,21 +45,30 @@ export default function App() {
       <h1>Bucket List</h1>
 
       <input
+        className="taskName"
         type="text"
         placeholder="Enter your task"
         value={task}
         onChange={inputHandler}
       />
-      <button onClick={addTask}> + </button>
+      <button className="addTaskbtn" onClick={addTask}>
+        {" "}
+        +{" "}
+      </button>
 
       {/* displaying the tasks */}
       {list.map((itemVal, item) => {
         return (
           <div className="allTask">
             <li key={item}>
-              <FontAwesomeIcon icon="trash" onClick={() => delTask(item)} />
+              <FontAwesomeIcon
+                icon="trash"
+                className="fontAwesome"
+                onClick={() => delTask(item)}
+              />
               {itemVal}
               <FontAwesomeIcon
+                className="fontAwesome"
                 icon="check-circle"
                 onClick={() => checkDone(itemVal, item)}
               />

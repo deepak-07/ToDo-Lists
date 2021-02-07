@@ -2,3 +2,42 @@
   font-family: sans-serif;
   text-align: center;
 }
+.taskName {
+  display: block;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  padding: 4px 3px;
+  margin-bottom: 10px;
+  border-radius: 10%;
+}
+
+.addTaskbtn {
+  border-radius: 50%;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.allTask,
+.taskDone {
+  display: block;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  padding: 2px 2px;
+  margin-top: 5px;
+}
+
+.allTask li {
+  padding: 2px 2px;
+}
+
+.fontAwesome {
+  padding: 1px 15px;
+  cursor: pointer;
+}
+
+.taskDone li {
+  /* list-style: none; */
+  padding: 2px 2px;
+}
