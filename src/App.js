@@ -60,6 +60,7 @@ export default function App() {
       ttask: list
     }));
     setTaskHead("");
+    setList([]);
 
     console.log(category);
   }
@@ -121,9 +122,6 @@ export default function App() {
         Done
       </button>
 
-      {/* {Object.keys(category).map((index) => {
-          return <div key={index}>{index.tname}</div>;
-        })} */}
       <div className="groupTask">
         <span className="subHead"> {category.tname}</span>
         {category.ttask.map((index) => {
