@@ -60,6 +60,7 @@ export default function App() {
       ttask: list
     }));
     setTaskHead("");
+
     console.log(category);
   }
 
@@ -123,10 +124,14 @@ export default function App() {
       {/* {Object.keys(category).map((index) => {
           return <div key={index}>{index.tname}</div>;
         })} */}
-      <div className="saveList">
-        {category.tname}
+      <div className="groupTask">
+        <span className="subHead"> {category.tname}</span>
         {category.ttask.map((index) => {
-          return <div key={index}>{index}</div>;
+          return (
+            <div key={index}>
+              <li>{index}</li>
+            </div>
+          );
         })}
       </div>
     </div>

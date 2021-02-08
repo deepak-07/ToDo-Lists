@@ -20,7 +20,8 @@
 }
 
 .allTask,
-.taskDone {
+.taskDone,
+.groupTask {
   display: block;
   align-items: center;
   margin: auto;
@@ -41,4 +42,13 @@
 .taskDone li {
   /* list-style: none; */
   padding: 2px 2px;
+}
+.groupTask li {
+  /* list-style: none; */
+  padding: 2px 2px;
+}
+.subHead {
+  font-weight: bold;
+  font-size: large;
+  color: salmon;
 }
