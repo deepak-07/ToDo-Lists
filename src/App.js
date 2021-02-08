@@ -50,12 +50,9 @@ export default function App() {
 
   //saving category
   function addGroupTask() {
-    setCategory((oldValue) => ({
-      ...oldValue,
-      newValue: {
-        tname: taskHead,
-        ttask: list
-      }
+    setCategory((category) => ({
+      ...category,
+      tname: taskHead
     }));
     setCategory((oldValue) => ({
       ...oldValue,
@@ -122,9 +119,14 @@ export default function App() {
       <button className="groupTaskbtn" onClick={addGroupTask}>
         Done
       </button>
-      <div className="All">
-        {Object.keys(category).map((indexVal, index) => {
+
+      {/* {Object.keys(category).map((index) => {
           return <div key={index}>{index.tname}</div>;
+        })} */}
+      <div className="saveList">
+        {category.tname}
+        {category.ttask.map((index) => {
+          return <div key={index}>{index}</div>;
         })}
       </div>
     </div>
