@@ -54,12 +54,17 @@
 .finalCategory {
   display: inline-block;
   margin: 5px 15px;
-  height: 30px;
+  padding: 2px 2px;
+  /* height: 30px; */
   vertical-align: top;
-
+  /* border: 2.5px solid black; */
+  background-color: lightblue;
   /* color: salmon; */
 }
 .categoryName {
   font-weight: bold;
   font-size: large;
+}
+.categoryList-Li {
+  text-align: left;
 }

@@ -51,7 +51,7 @@ export default function App() {
 
   //saving category
   function addGroupTask() {
-    if (taskHead !== "" && task !== "") {
+    if (taskHead !== "" && list !== []) {
       setCategory((category) => ({
         ...category,
         tname: taskHead
@@ -70,7 +70,7 @@ export default function App() {
     } else {
       alert("Please enter task");
     }
-    if (taskHead !== "" && task !== "") {
+    if (taskHead !== "" && list !== []) {
       setCategoryList((categoryList) => [
         ...categoryList,
         { tname: taskHead, ttask: list }
