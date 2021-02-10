@@ -57,6 +57,7 @@ export default function App() {
         tname: taskHead
       }));
       setTaskHead("");
+      setDone([]);
     } else alert("Please enter sub heading");
     if (list !== "") {
       setCategory((category) => ({

@@ -54,6 +54,8 @@
 .finalCategory {
   display: inline-block;
   margin: 5px 15px;
+  height: 30px;
+  vertical-align: top;
 
   /* color: salmon; */
 }
