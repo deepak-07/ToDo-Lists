@@ -140,10 +140,10 @@ export default function App() {
         {/* Displaying all saved task group */}
         {categoryList.map((index) => {
           return (
-            <div>
-              <span>{index.tname}</span>
+            <div className="finalCategory">
+              <span className="categoryName">{index.tname}</span>
               {index.ttask.map((item) => {
-                return <li>{item}</li>;
+                return <li className="categoryList-Li">{item}</li>;
               })}
             </div>
           );
