@@ -51,8 +51,13 @@
   /* list-style: none; */
   padding: 2px 2px;
 }
-.subHead {
+.finalCategory {
+  display: inline-block;
+  margin: 5px 15px;
+
+  /* color: salmon; */
+}
+.categoryName {
   font-weight: bold;
   font-size: large;
-  color: salmon;
 }
