@@ -79,7 +79,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>Bucket List</h1>
-
+      {/* input for task category */}
       <input
         className="taskHeading"
         type="text"
@@ -87,6 +87,7 @@ export default function App() {
         value={taskHead}
         onChange={inputHandlerTaskHead}
       />
+      {/* input for task  */}
       <input
         className="taskName"
         type="text"
@@ -94,6 +95,7 @@ export default function App() {
         value={task}
         onChange={inputHandlerTask}
       />
+      {/* bottin for adding single task */}
       <button className="addTaskbtn" onClick={addTask}>
         +
       </button>
@@ -129,32 +131,20 @@ export default function App() {
           </div>
         );
       })}
+      {/* button for saving tasks */}
       <button className="groupTaskbtn" onClick={addGroupTask}>
         Done
       </button>
 
       <div className="groupTask">
-        {/* <span className="subHead"> {category.tname}</span>
-        {category.ttask.map((index) => {
-          return (
-            <div key={index}>
-              <li>{index}</li>
-            </div>
-          );
-        })} */}
+        {/* Displaying all saved task group */}
         {categoryList.map((index) => {
           return (
             <div>
-              <li>
-                {index.tname}
-                {index.ttask}
-              </li>
-
-              {/* <span>
-                {index.ttask.map((e, f) => {
-                  return { e };
-                })}
-              </span> */}
+              <span>{index.tname}</span>
+              {index.ttask.map((item) => {
+                return <li>{item}</li>;
+              })}
             </div>
           );
         })}
