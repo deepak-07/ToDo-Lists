@@ -7,6 +7,7 @@ import { faCheckCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
 library.add(faCheckCircle, faTrash);
 
 export default function App() {
+  const [categoryList, setCategoryList] = useState([]);
   const [category, setCategory] = useState({ tname: "", ttask: [] });
   const [taskHead, setTaskHead] = useState("");
   const [task, setTask] = useState("");
@@ -29,7 +30,7 @@ export default function App() {
       setList((oldValue) => [...oldValue, task]);
       setTask("");
     } else alert("Please enter any task");
-    console.log(task, list, done);
+    console.log(category, categoryList);
   }
 
   //deleting task from the list
@@ -50,19 +51,29 @@ export default function App() {
 
   //saving category
   function addGroupTask() {
-    setCategory((category) => ({
-      ...category,
-      tname: taskHead
-    }));
-    setCategory((oldValue) => ({
-      ...oldValue,
-      // tname: taskHead
-      ttask: list
-    }));
-    setTaskHead("");
-    setList([]);
+    if (taskHead !== "") {
+      setCategory((category) => ({
+        ...category,
+        tname: taskHead
+      }));
+      setTaskHead("");
+    } else alert("Please enter sub heading");
+    if (list !== "") {
+      setCategory((category) => ({
+        ...category,
+        ttask: list
+      }));
+      setList([]);
+    } else alert("Please enter task");
+
+    setCategoryList((categoryList) => [
+      ...categoryList,
+      { tname: taskHead, ttask: list }
+    ]);
+    // setCategoryList((categoryList) => [...categoryList, { ttask: list }]);
 
     console.log(category);
+    console.log(categoryList);
   }
 
   return (
@@ -123,11 +134,27 @@ export default function App() {
       </button>
 
       <div className="groupTask">
-        <span className="subHead"> {category.tname}</span>
+        {/* <span className="subHead"> {category.tname}</span>
         {category.ttask.map((index) => {
           return (
             <div key={index}>
               <li>{index}</li>
+            </div>
+          );
+        })} */}
+        {categoryList.map((index) => {
+          return (
+            <div>
+              <li>
+                {index.tname}
+                {index.ttask}
+              </li>
+
+              {/* <span>
+                {index.ttask.map((e, f) => {
+                  return { e };
+                })}
+              </span> */}
             </div>
           );
         })}
