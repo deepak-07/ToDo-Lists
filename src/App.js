@@ -51,26 +51,31 @@ export default function App() {
 
   //saving category
   function addGroupTask() {
-    if (taskHead !== "") {
+    if (taskHead !== "" && task !== "") {
       setCategory((category) => ({
         ...category,
         tname: taskHead
       }));
       setTaskHead("");
       setDone([]);
-    } else alert("Please enter sub heading");
+    } else {
+      alert("Please fill them");
+    }
     if (list !== "") {
       setCategory((category) => ({
         ...category,
         ttask: list
       }));
       setList([]);
-    } else alert("Please enter task");
-
-    setCategoryList((categoryList) => [
-      ...categoryList,
-      { tname: taskHead, ttask: list }
-    ]);
+    } else {
+      alert("Please enter task");
+    }
+    if (taskHead !== "" && task !== "") {
+      setCategoryList((categoryList) => [
+        ...categoryList,
+        { tname: taskHead, ttask: list }
+      ]);
+    }
     // setCategoryList((categoryList) => [...categoryList, { ttask: list }]);
 
     console.log(category);
