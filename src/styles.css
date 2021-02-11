@@ -68,18 +68,21 @@ body {
 .groupTask {
   padding: 2px 2px;
   width: 100%;
-  clip-path: polygon(0 0, 100% 0, 76% 100%, 22% 100%);
+  margin: 2px 2px;
+  /* clip-path: polygon(0 0, 100% 0, 76% 100%, 22% 100%); */
+  background-image: url(/bucket.jpg);
 }
 .finalCategory {
   display: inline-block;
-  /* margin-top: 7px; */
-  margin-left: 50px;
-  /* padding: 2px 2px; */
+  margin-top: 7px;
+  margin: 2px 15px;
+  /* margin-left: 50px; */
+  padding: 2px 2px;
   vertical-align: top;
 
   /* height: 30px; */
-  /* position: relative; */
-  background-color: yellow;
+  position: relative;
+  background-image: url(/);
   /* left: 10px; */
 }
 .categoryName {
