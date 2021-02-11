@@ -65,18 +65,22 @@ body {
 .taskDone li {
   padding: 2px 2px;
 }
-.groupTask li {
+.groupTask {
   padding: 2px 2px;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 76% 100%, 22% 100%);
 }
 .finalCategory {
   display: inline-block;
-  margin-top: 7px;
+  /* margin-top: 7px; */
   margin-left: 50px;
-  padding: 2px 2px;
-  /* height: 30px; */
+  /* padding: 2px 2px; */
   vertical-align: top;
-  position: relative;
-  left: 10px;
+
+  /* height: 30px; */
+  /* position: relative; */
+  background-color: yellow;
+  /* left: 10px; */
 }
 .categoryName {
   font-weight: bold;
