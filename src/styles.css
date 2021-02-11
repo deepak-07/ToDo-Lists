@@ -1,7 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+:root {
+  --hard-color: rgb(79, 70, 229);
+  --light-color: rgb(129, 140, 248);
+  --text-white: rgb(224, 231, 255);
+}
+
 .App {
-  font-family: sans-serif;
   text-align: center;
 }
+body {
+  background-color: var(--light-color);
+  color: var(--text-white);
+  font-family: "Pangolin", cursive;
+}
+
 .taskHeading,
 .taskName {
   display: block;
@@ -15,12 +27,16 @@
 
 .addTaskbtn,
 .groupTaskbtn {
+  font-family: "Pangolin", cursive;
   display: block;
   margin: auto;
   border-radius: 50%;
-  padding: 2px 6px;
+  padding: 3px 8px;
   cursor: pointer;
   margin-bottom: 5px;
+  color: var(--text-white);
+  font-weight: bold;
+  background-color: var(--hard-color);
 }
 
 .allTask,
@@ -53,17 +69,19 @@
 }
 .finalCategory {
   display: inline-block;
-  margin: 5px 15px;
+  margin-top: 7px;
   padding: 2px 2px;
   /* height: 30px; */
   vertical-align: top;
-  /* border: 2.5px solid black; */
-  background-color: lightblue;
-  /* color: salmon; */
+  position: absolute;
+  left: 10px;
+
+  /* color: var(--hard-color); */
 }
 .categoryName {
   font-weight: bold;
   font-size: large;
+  letter-spacing: 1px;
 }
 .categoryList-Li {
   text-align: left;

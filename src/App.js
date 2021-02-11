@@ -89,7 +89,7 @@ export default function App() {
       <input
         className="taskHeading"
         type="text"
-        placeholder="Enter heading"
+        placeholder="Untitled"
         value={taskHead}
         onChange={inputHandlerTaskHead}
       />
@@ -97,7 +97,7 @@ export default function App() {
       <input
         className="taskName"
         type="text"
-        placeholder="Enter your task"
+        placeholder="Enter Wish"
         value={task}
         onChange={inputHandlerTask}
       />
@@ -139,7 +139,7 @@ export default function App() {
       })}
       {/* button for saving tasks */}
       <button className="groupTaskbtn" onClick={addGroupTask}>
-        Done
+        Save
       </button>
 
       <div className="groupTask">
