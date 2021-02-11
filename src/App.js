@@ -76,7 +76,6 @@ export default function App() {
         { tname: taskHead, ttask: list }
       ]);
     }
-    // setCategoryList((categoryList) => [...categoryList, { ttask: list }]);
 
     console.log(category);
     console.log(categoryList);

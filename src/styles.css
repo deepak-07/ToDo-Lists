@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
 :root {
-  --hard-color: rgb(79, 70, 229);
+  --hard-color: rgb(30, 64, 175);
   --light-color: rgb(129, 140, 248);
   --text-white: rgb(224, 231, 255);
 }
@@ -8,6 +8,7 @@
 .App {
   text-align: center;
 }
+
 body {
   background-color: var(--light-color);
   color: var(--text-white);
@@ -23,6 +24,7 @@ body {
   padding: 4px 3px;
   margin-bottom: 10px;
   border-radius: 10%;
+  font-family: "Pangolin", cursive;
 }
 
 .addTaskbtn,
@@ -57,31 +59,30 @@ body {
 .fontAwesome {
   padding: 1px 15px;
   cursor: pointer;
+  color: var(--hard-color);
 }
 
 .taskDone li {
-  /* list-style: none; */
   padding: 2px 2px;
 }
 .groupTask li {
-  /* list-style: none; */
   padding: 2px 2px;
 }
 .finalCategory {
   display: inline-block;
   margin-top: 7px;
+  margin-left: 50px;
   padding: 2px 2px;
   /* height: 30px; */
   vertical-align: top;
-  position: absolute;
+  position: relative;
   left: 10px;
-
-  /* color: var(--hard-color); */
 }
 .categoryName {
   font-weight: bold;
   font-size: large;
   letter-spacing: 1px;
+  color: var(--hard-color);
 }
 .categoryList-Li {
   text-align: left;
